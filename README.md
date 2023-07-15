@@ -39,3 +39,32 @@ grade= ‘A’
 ● pf=0.11*10000=1100  
 ● Total salary=10000+2000+5000+1700-1100=17600  
 ● Rounding off will keep it 17600 which is our output print it.  
+
+    import java.util.Scanner;
+
+    public class TotalSalary {
+
+        public static void main(String[] args) {
+            Scanner s = new Scanner(System.in);
+            int basic = s.nextInt();
+            char G = s.next().charAt(0);
+        
+            double hra = basic*0.5;
+            double da = basic*0.2;
+            int allow;
+            if(G == 'A'){
+                allow = 1700;
+            }
+            else if(G == 'B'){
+                allow = 1500;
+            }
+            else{
+                allow = 1300;
+            }
+            double pf = basic*0.11;
+
+            int totalSalary = (int)Math.round(basic + hra + da + allow - pf);
+            System.out.println(totalSalary);
+            s.close();
+        }
+    }
